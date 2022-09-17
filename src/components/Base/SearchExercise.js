@@ -18,7 +18,9 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
       `${process.env.REACT_APP_API_BASE}/exercises`,
       exerciseOptions
     );
-    query = query || search;
+
+    console.log(query);
+
     const filteredResponse = res.filter((exercise) => {
       return (
         exercise.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -28,7 +30,6 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
       );
     });
     setExercises(filteredResponse);
-    // setSearch("");
   };
 
   useEffect(() => {
@@ -83,7 +84,7 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
           type="text"
         />
         <Button
-          onClick={handleSearch}
+          onClick={() => handleSearch(search)}
           className="search-btn"
           sx={{
             background: "#ff2625",

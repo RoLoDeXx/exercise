@@ -9,7 +9,19 @@ const Workouts = ({ setExercises, exercises, setBodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const exercisesPerPage = 9;
 
-  const renderExercises = () => {
+  const indexOfLastExercise = currentPage * exercisesPerPage;
+  const indexofFirstExercise = indexOfLastExercise - exercisesPerPage;
+  const currentExercises = exercises.slice(
+    indexofFirstExercise,
+    indexOfLastExercise
+  );
+
+  const paginate = (e, value) => {
+    setCurrentPage(value);
+    window.scrollTo({ top: "1800", behavior: "smooth" });
+  };
+
+  const renderExercises = (exercises) => {
     return exercises.map((exercise, index) => (
       <ExerciseCard details={{ exercise }} key={index} />
     ));
@@ -30,17 +42,16 @@ const Workouts = ({ setExercises, exercises, setBodyPart }) => {
       </Typography>
 
       <Grid container spacing={3}>
-        {renderExercises()}
+        {renderExercises(currentExercises)}
       </Grid>
       <Stack mt="5rem" alignItems="center">
         {exercises.length > exercisesPerPage && (
           <Pagination
-            color="standard"
             shape="rounded"
-            defaultPage="1"
-            count={Math.ceil(exercises.length / exercisesPerPage)}
+            count={Math.ceil(exercises.length / 9)}
             page={currentPage}
-            onChange={paginate}
+            // onChange={(event) => console.log(event.target.textContent)}
+            onChange={(event, page) => paginate(event, page)}
             size="large"
           />
         )}
