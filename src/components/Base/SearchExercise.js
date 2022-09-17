@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+} from "@mui/material";
 import { exerciseOptions, fetchData } from "../../utils/fetchData";
 import HorizontalScrollBar from "./HorizontalScrollBar";
 
 const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
   const [bodyParts, setBodyParts] = useState([]);
-  const handleSearch = async () => {
+  const handleSearch = async (query) => {
     const res = await fetchData(
       `${process.env.REACT_APP_API_BASE}/exercises`,
       exerciseOptions
     );
-
+    query = query || search;
     const filteredResponse = res.filter((exercise) => {
       return (
-        exercise.name.toLowerCase().includes(search.toLowerCase()) ||
-        exercise.target.toLowerCase().includes(search.toLowerCase()) ||
-        exercise.equipment.toLowerCase().includes(search.toLowerCase()) ||
-        exercise.bodyPart.toLowerCase().includes(search.toLowerCase())
+        exercise.name.toLowerCase().includes(query.toLowerCase()) ||
+        exercise.target.toLowerCase().includes(query.toLowerCase()) ||
+        exercise.equipment.toLowerCase().includes(query.toLowerCase()) ||
+        exercise.bodyPart.toLowerCase().includes(query.toLowerCase())
       );
     });
     setExercises(filteredResponse);
-    setSearch("");
+    // setSearch("");
   };
 
   useEffect(() => {
@@ -35,6 +42,12 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
     };
     fetchExercisesData();
   }, []);
+
+  useEffect(() => {
+    if (bodyPart !== "all") {
+      handleSearch(bodyPart);
+    }
+  }, [bodyPart]);
 
   return (
     <Stack alignItems="center" mt="3rem" justifyContent="center" p="1rem">
@@ -86,7 +99,6 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
             },
             height: "56px",
             position: {
-              // md: "absolute",
               right: "0",
             },
           }}

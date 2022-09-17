@@ -23,7 +23,7 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
         sx={{
           color: "#ff2625",
         }}
-      ></Tab>
+      />
     ));
   };
 

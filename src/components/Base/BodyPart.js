@@ -6,13 +6,14 @@ import styles from "./bodyPart.module.css";
 const BodyPart = ({ item, bodyPart, setBodyPart }) => {
   return (
     <Stack
+      onClick={() => setBodyPart(item)}
       type="button"
       alingnItems="center"
       justifyContent="center"
-      className="bodyPart-card"
     >
       <img className={styles.bodyPartImage} src={Icon} alt="dumbell" />
       <Typography
+        mt="0.5rem"
         align="center"
         paragraph={true}
         sx={{ textTransform: "capitalize" }}
