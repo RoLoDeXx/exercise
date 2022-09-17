@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "@mui/material";
 import Banner from "./Banner";
 import SearchExercise from "./SearchExercise";
 import Workouts from "./Workouts";
 
 const Landing = () => {
+  const [exercises, setExercises] = useState([]);
+  const [bodyPart, setBodyPart] = useState("all");
   return (
     <Box>
       <Banner />
-      <SearchExercise />
-      <Workouts />
+      <SearchExercise
+        setExercises={setExercises}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
+      <Workouts
+        setExercises={setExercises}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
     </Box>
   );
 };

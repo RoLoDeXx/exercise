@@ -3,8 +3,9 @@ import Box from "@mui/material/Box";
 import Tabs, { tabsClasses } from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import { Typography } from "@material-ui/core";
+import BodyPart from "./BodyPart";
 
-const HorizontalScrollBar = ({ data }) => {
+const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -22,6 +23,7 @@ const HorizontalScrollBar = ({ data }) => {
           color: "#ff2625",
         }}
       >
+        <BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
         <Typography sx={{ color: "#ff2625" }}>{item}</Typography>
       </Tab>
     ));
