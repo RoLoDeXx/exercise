@@ -16,6 +16,7 @@ const BodyPart = ({ item, bodyPart, setBodyPart }) => {
         mt="0.5rem"
         align="center"
         paragraph={true}
+        variant="h6"
         sx={{ textTransform: "capitalize" }}
       >
         {item}

@@ -37,10 +37,11 @@ const Workouts = ({ setExercises, exercises, setBodyPart }) => {
         p: "1rem",
       }}
     >
-      <Typography variant="h4" color="initial" mb="3rem">
-        Showing Results
-      </Typography>
-
+      {exercises.length > 0 && (
+        <Typography variant="h4" color="initial" mb="3rem">
+          Showing Results
+        </Typography>
+      )}
       <Grid container spacing={3}>
         {renderExercises(currentExercises)}
       </Grid>

@@ -5,12 +5,6 @@ import Tab from "@mui/material/Tab";
 import BodyPart from "./BodyPart";
 
 const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   const renderList = () => {
     return data.map((item) => (
       <Tab
@@ -21,7 +15,8 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
           <BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
         }
         sx={{
-          color: "#ff2625",
+          color: "#000",
+          px: "2rem",
         }}
       />
     ));
@@ -36,8 +31,6 @@ const HorizontalScrollBar = ({ data, setBodyPart, bodyPart }) => {
       }}
     >
       <Tabs
-        value={value}
-        onChange={handleChange}
         variant="scrollable"
         scrollButtons
         aria-label="visible arrows tabs example"

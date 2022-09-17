@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { exerciseOptions, fetchData } from "../../utils/fetchData";
 import HorizontalScrollBar from "./HorizontalScrollBar";
+import CountUp from "react-countup";
 
 const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
   const [search, setSearch] = useState("");
@@ -51,27 +52,29 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
   }, [bodyPart]);
 
   return (
-    <Stack alignItems="center" mt="3rem" justifyContent="center" p="1rem">
+    <Stack alignItems="center" mt="3rem" justifyContent="center">
       <Typography
         color="initial"
         sx={{
           fontSize: {
-            lg: "4rem",
-            xs: "2rem",
+            lg: "2.25rem",
+            xs: "1.75rem",
           },
           mb: "5rem",
-          textAlign: "center",
+          textAlign: "left",
         }}
       >
-        Confused about what should you do in the gym?
-        <br /> Why don't you search in our database.
+        Eliminate confusion about your next workout with MeFit.
+        <br />
+        Search in our curated list of over <CountUp end={1300} />+ movements to
+        provide top-of-the-line professional exercise content..
       </Typography>
       <Box position="relative" mb="6rem">
         <TextField
           sx={{
             input: { border: "none", borderRadius: "4px" },
             width: {
-              lg: "800px",
+              lg: "900px",
               xs: "100%",
             },
             backgroundColor: "#fffff",

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import BannerImage from "../../assets/images/banner.png";
+import Typewriter from "typewriter-effect";
+import BannerImage from "../../assets/images/banner2.jpg";
 import styles from "./banner.module.css";
 
 const Banner = () => {
@@ -20,9 +21,20 @@ const Banner = () => {
       <Typography className={styles.bannerHead}>Fit 4 Fitness</Typography>
 
       <Typography className={styles.quotedText} sx={{ mt: "4rem" }}>
-        I will workout &nbsp;<br></br>
-        <span className={styles.strikeThrough}>tomorrow</span>
-        &nbsp; Now!
+        Search for: <br />
+        <Typewriter
+          options={{
+            strings: [
+              "Chest exercises",
+              "Body weight exercises",
+              "Squat",
+              "Biceps",
+              "Cardio",
+            ],
+            autoStart: true,
+            loop: true,
+          }}
+        />
       </Typography>
 
       <Button
