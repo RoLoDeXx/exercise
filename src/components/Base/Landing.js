@@ -7,6 +7,7 @@ import Workouts from "./Workouts";
 const Landing = () => {
   const [exercises, setExercises] = useState([]);
   const [bodyPart, setBodyPart] = useState("all");
+  console.log(exercises, "parent");
   return (
     <Box>
       <Banner />
@@ -17,7 +18,7 @@ const Landing = () => {
       />
       <Workouts
         setExercises={setExercises}
-        bodyPart={bodyPart}
+        exercises={exercises}
         setBodyPart={setBodyPart}
       />
     </Box>

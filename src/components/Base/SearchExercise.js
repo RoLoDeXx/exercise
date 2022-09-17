@@ -13,13 +13,15 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
     );
 
     const filteredResponse = res.filter((exercise) => {
-      exercise.name.toLowerCase().includes(search.toLowerCase()) ||
+      return (
+        exercise.name.toLowerCase().includes(search.toLowerCase()) ||
         exercise.target.toLowerCase().includes(search.toLowerCase()) ||
         exercise.equipment.toLowerCase().includes(search.toLowerCase()) ||
-        exercise.bodyPart.toLowerCase().includes(search.toLowerCase());
+        exercise.bodyPart.toLowerCase().includes(search.toLowerCase())
+      );
     });
-    setSearch("");
     setExercises(filteredResponse);
+    setSearch("");
   };
 
   useEffect(() => {
