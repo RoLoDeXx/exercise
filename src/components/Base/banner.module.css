@@ -1,0 +1,32 @@
+.bannerHead{
+    font-weight: 600;
+    font-size: 26px;
+    color: #ff2625;
+}
+
+.bannerButton{
+    color: #ffffff;
+    text-transform: capitalize;
+    background:#ff2625;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.wrapper{
+    position: relative;
+    padding: 20px;
+}
+
+.backdrop{
+    font-weight: 600;
+    color:#ff2625;
+    font-size: 18rem;
+}
+
+.strikeThrough{
+    text-decoration: line-through;
+}
+
+.quotedText{
+    font-size: 3rem;
+}

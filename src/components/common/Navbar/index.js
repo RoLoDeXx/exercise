@@ -15,7 +15,10 @@ const index = () => {
           sm: "32px",
           xs: "20px",
         },
-        justifyContent: "none",
+        justifyContent: {
+          xs: "space-between",
+          lg: "flex-start",
+        },
         px: "20px",
       }}
     >

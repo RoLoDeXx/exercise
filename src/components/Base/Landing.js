@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box } from "@mui/material";
 import Banner from "./Banner";
 import SearchExercise from "./SearchExercise";
 import Workouts from "./Workouts";
 
-const index = () => {
+const Landing = () => {
   return (
     <Box>
       <Banner />
@@ -14,4 +14,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Landing;
