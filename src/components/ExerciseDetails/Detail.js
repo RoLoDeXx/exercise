@@ -1,9 +1,9 @@
 import React from "react";
 import { Typography, Stack, Button } from "@mui/material";
 
-import BodyPartImage from "../assets/icons/body-part.png";
-import TargetImage from "../assets/icons/target.png";
-import EquipmentImage from "../assets/icons/equipment.png";
+import BodyPartImage from "../../assets/icons/body-part.png";
+import TargetImage from "../../assets/icons/target.png";
+import EquipmentImage from "../../assets/icons/equipment.png";
 
 const Detail = ({ exerciseDetail }) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
@@ -25,13 +25,13 @@ const Detail = ({ exerciseDetail }) => {
 
   return (
     <Stack
-      gap="60px"
-      sx={{ flexDirection: { lg: "row" }, p: "20px", alignItems: "center" }}
+      gap="4rem"
+      sx={{ flexDirection: { lg: "row" }, p: "1rem", alignItems: "center" }}
     >
       <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
-      <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
+      <Stack sx={{ gap: { lg: "3rem", xs: "1rem" } }}>
         <Typography
-          sx={{ fontSize: { lg: "64px", xs: "30px" } }}
+          sx={{ fontSize: { lg: "5rem", xs: "2rem" } }}
           fontWeight={700}
           textTransform="capitalize"
         >
