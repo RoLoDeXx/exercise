@@ -1,13 +1,13 @@
 .bannerHead{
     font-weight: 600;
     font-size: 26px;
-    color: #ff2625;
+    color: #f6cd13;
 }
 
 .bannerButton{
     color: #ffffff;
     text-transform: capitalize;
-    background:#ff2625;
+    background:#f6cd13;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
 }
@@ -19,7 +19,7 @@
 
 .backdrop{
     font-weight: 600;
-    color:#ff2625;
+    color:#f6cd13;
     font-size: 18rem;
 }
 

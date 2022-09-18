@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Alert,
-  Box,
-  Button,
-  Stack,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../../utils/fetchData";
 import HorizontalScrollBar from "./HorizontalScrollBar";
 import CountUp from "react-countup";
@@ -60,6 +53,7 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
             lg: "2.25rem",
             xs: "1.75rem",
           },
+          px: "20px",
           mb: "5rem",
           textAlign: "left",
         }}
@@ -90,7 +84,7 @@ const SearchExercise = ({ setExercises, bodyPart, setBodyPart }) => {
           onClick={() => handleSearch(search)}
           className="search-btn"
           sx={{
-            background: "#ff2625",
+            background: "#f6cd13",
             color: "#ffffff",
             textTransform: "none",
             width: {

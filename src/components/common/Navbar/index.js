@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Stack } from "@mui/material";
-import Logo from "../../../assets/images/Logo.png";
+import Logo from "../../../assets/images/logo2.png";
 import styles from "./index.module.css";
 
 const index = () => {
@@ -25,7 +25,7 @@ const index = () => {
       <Link to="/">
         <img className={styles.logo} src={Logo} alt="logo" />
       </Link>
-      <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
+      <Stack direction="row" gap="40px" fontSize="24px" alignItems="center">
         <Link to="/" className={styles.anchor}>
           Home
         </Link>

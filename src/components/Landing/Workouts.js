@@ -48,10 +48,10 @@ const Workouts = ({ setExercises, exercises, setBodyPart }) => {
       <Stack mt="5rem" alignItems="center">
         {exercises.length > exercisesPerPage && (
           <Pagination
+            color="primary"
             shape="rounded"
             count={Math.ceil(exercises.length / 9)}
             page={currentPage}
-            // onChange={(event) => console.log(event.target.textContent)}
             onChange={(event, page) => paginate(event, page)}
             size="large"
           />

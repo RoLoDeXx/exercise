@@ -31,14 +31,13 @@ const Detail = ({ exerciseDetail }) => {
       <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
       <Stack sx={{ gap: { lg: "3rem", xs: "1rem" } }}>
         <Typography
-          sx={{ fontSize: { lg: "5rem", xs: "2rem" } }}
-          fontWeight={700}
+          sx={{ fontSize: { lg: "3rem", xs: "1.25rem" } }}
           textTransform="capitalize"
         >
           {name}
         </Typography>
         <Typography
-          sx={{ fontSize: { lg: "24px", xs: "18px" } }}
+          sx={{ fontSize: { lg: "1.25rem", xs: "1rem" } }}
           color="#4F4C4C"
         >
           Exercises keep you strong.{" "}
